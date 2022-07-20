@@ -2,6 +2,8 @@
 
 This is the [zmk](https://zmk.dev) firmware for the [le_chiffre ble](https://github.com/MangoIV/le_chiff_ble) drop-in replacement PCB. 
 
+test teest
+
 ### How to use 
 
 - fork this repo
