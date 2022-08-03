@@ -10,29 +10,16 @@
 #include <dt-bindings/zmk/outputs.h>
 
 / {
-    behaviors {
-        hm: homerow_mods {
-            compatible = "zmk,behavior-hold-tap";
-            label = "homerow mods";
-            #binding-cells = <2>;
-            tapping_term_ms = <180>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-    };
-    
-
-
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             label = "Base";
             bindings = <
-                &kp Q  &kp F  &kp C  &kp K  &kp X                &none  &kp W  &kp O    &kp U  &kp Z
-                &kp R  &kp S  &kp T  &kp H  &kp D                &kp V  &kp N  &kp A    &kp I  &kp L
-                &kp Z  &kp B  &kp G  &kp P  &kp COMMA    &none   &none  &kp M  &kp DOT  &kp J  &kp SEMI
-                                 &none  &kp SPACE                &kp E   &none 
+                &kp Q  &kp F  &kp C  &kp K  &kp X                &kp SPC  &kp W  &kp O    &kp U  &kp Z
+                &kp R  &kp S  &kp T  &kp H  &kp D                &kp V    &kp N  &kp A    &kp I  &kp L
+                &kp Y  &kp B  &kp G  &kp P  &kp COMMA    &none   &kp SPC  &kp M  &kp DOT  &kp J  &kp SEMI
+                               &bootloader  &kp SPACE                &kp E  &reset  
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
