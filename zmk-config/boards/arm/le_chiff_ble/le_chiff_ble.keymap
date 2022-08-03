@@ -13,6 +13,19 @@
 
 / {
 
+    macros {
+
+	lambda_arrow: lambda_arrow {
+            label = "lambda_arrow";
+            compatible = "zmk,behavior-macro";
+	    #binding-cells = <0>;
+            wait-ms = <10>;
+	    tap-ms = <10>;
+	    bindings
+	    = <&kp MINUS &kp GREATER_THAN>
+	    ;
+        };
+
 //   ╔═════════════════════════════╗    ╔═════════════════════════════╗
 //   ║  0  |  1  |  2  |  3  |  4  ║    ║  5  |  6  |  7  |  8  |  9  ║
 //   ║ 10  | 11  | 12  | 13  | 14  ║    ║ 15  | 16  | 17  | 18  | 19  ║
