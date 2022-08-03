@@ -1,6 +1,4 @@
 /*
- * Copyright (c) 2021 @MangoIV
- *
  * SPDX-License-Identifier: MIT
  */
 
@@ -10,6 +8,14 @@
 #include <dt-bindings/zmk/outputs.h>
 
 / {
+
+//   ╔═════════════════════════════╗    ╔═════════════════════════════╗
+//   ║  0  |  1  |  2  |  3  |  4  ║    ║  5  |  6  |  7  |  8  |  9  ║
+//   ║ 10  | 11  | 12  | 13  | 14  ║    ║ 15  | 16  | 17  | 18  | 19  ║
+//   ║ 20  | 21  | 22  | 23  | 24  ║    ║ 25  | 26  | 27  | 28  | 39  ║
+//   ╚═════════════╗  30   |  31   ║    ║  32   |  33   ╔═════════════╝
+//                 ╚═══════════════╝    ╚═══════════════╝
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -18,8 +24,8 @@
             bindings = <
                 &kp Q  &kp F  &kp C  &kp K  &kp X                &kp SPC  &kp W  &kp O    &kp U  &kp Z
                 &kp R  &kp S  &kp T  &kp H  &kp D                &kp V    &kp N  &kp A    &kp I  &kp L
-                &kp Y  &kp B  &kp G  &kp P  &kp COMMA    &none   &kp SPC  &kp M  &kp DOT  &kp J  &kp SEMI
-                               &bootloader  &kp SPACE                &kp E  &reset  
+                &kp Y  &kp B  &kp G  &kp P  &kp COMMA            &kp SPC  &kp M  &kp DOT  &kp J  &kp SEMI
+                               &bootloader  &kp SPACE            &kp E  &reset  
             >;
             sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
