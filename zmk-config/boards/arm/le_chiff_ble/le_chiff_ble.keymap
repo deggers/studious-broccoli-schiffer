@@ -160,7 +160,6 @@
                 &kp Y  &kp B  &kp G  &kp P  &kp COMMA            &kp SPC  &kp M  &kp DOT  &kp J  &kp SEMI
                                &bootloader  &kp SPACE            &kp E  &reset  
             >;
-            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOL_UP>;
         };
     };
 };
