@@ -11,21 +11,23 @@
    continue-list = <LSHIFT UNDERSCORE MINUS BSPC>; 
 };
 
+#define BASE   0
+#define NUMPAD 1
+
 / {
 
     macros {
     
-	lambda_arrow: lambda_arrow {
+        lambda_arrow: lambda_arrow {
             label = "lambda_arrow";
             compatible = "zmk,behavior-macro";
-	    #binding-cells = <0>;
+            #binding-cells = <0>;
             wait-ms = <10>;
-	    tap-ms = <10>;
-	    bindings
-	    = <&kp MINUS &kp GREATER_THAN>
-	    ;
+            tap-ms = <10>;
+            bindings = <&kp MINUS &kp GREATER_THAN>
+            ;
         };
-	
+        
     };
 
     //   ╔═════════════════════════════╗    ╔═════════════════════════════╗
@@ -38,6 +40,12 @@
     combos {
         compatible = "zmk,combos"; 
 
+        tog_numpad {
+            timeout-ms = <50>;
+            key-positions = <23 34>;
+            bndings = <&tog NUMPAD>
+        }
+ 
         combo_lPar {
             timeout-ms = <50>;
             key-positions = <1 2>;
@@ -152,14 +160,25 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+        BASE {
             label = "Base";
             bindings = <
                 &kp Q  &kp F  &kp C  &kp K  &kp X                &kp SPC  &kp W  &kp O    &kp U  &kp Z
                 &kp R  &kp S  &kp T  &kp H  &kp D                &kp V    &kp N  &kp A    &kp I  &kp L
                 &kp Y  &kp B  &kp G  &kp P  &kp COMMA            &kp SPC  &kp M  &kp DOT  &kp J  &kp SEMI
-                               &bootloader  &kp SPACE            &kp E  &reset  
+                               &none  &kp SPACE                   &kp E  &none  
             >;
         };
+
+        NUMPAD {
+            label = "Numpad";
+            bindings = <
+                &kp Q  &kp N9  &kp N8  &kp N7  &kp BSPC                &kp SPC  &kp W  &kp O    &kp U  &kp Z
+                &kp R  &kp N3  &kp N2  &kp N1  &kp RET                &kp V    &kp N  &kp A    &kp I  &kp L
+                &kp Y  &kp N6  &kp N5  &kp N4  &kp COMMA            &kp SPC  &kp M  &kp DOT  &kp J  &kp SEMI
+                               &bootloader  &kp N0            &kp E  &reset  
+            >;
+        };
+
     };
 };
