@@ -43,8 +43,8 @@
         bootloader {
             timeout-ms = <50>;
             key-positions = <0 1 8 9>;
-            bindings = <&bootloader>
-        }
+            bindings = <&bootloader>;
+        };
 
         tog_numpad {
             timeout-ms = <50>;
