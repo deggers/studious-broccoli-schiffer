@@ -14,8 +14,6 @@
 #define BASE   0
 #define NUMPAD 1
 
-#define NONE 0
-
 / {
 
     macros {
@@ -50,8 +48,8 @@
 
         tog_numpad {
             timeout-ms = <50>;
-            key-positions = <23 34>;
-            bindings = <&tog 1>;
+            key-positions = <23 24>;
+            bindings = <&tog NUMPAD>;
         };
  
         combo_lPar {
