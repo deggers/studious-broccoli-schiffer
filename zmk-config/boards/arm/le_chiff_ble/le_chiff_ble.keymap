@@ -43,7 +43,7 @@
         tog_numpad {
             timeout-ms = <50>;
             key-positions = <23 34>;
-            bndings = <&tog NUMPAD>
+            bndings = <&tog NUMPAD>;
         };
  
         combo_lPar {
