@@ -51,6 +51,18 @@
             key-positions = <23 24>;
             bindings = <&tog NUMPAD>;
         };
+
+        left_shift {
+            timeout-ms = <50>;
+            key-positions = <13 14>;
+            bindings = <&sk LSHIFT>;
+        };
+
+        right_shift {
+            timeout-ms = <50>;
+            key-positions = <15 16>;
+            bindings = <&sk LSHIFT>;
+        };
  
         combo_lPar {
             timeout-ms = <50>;
