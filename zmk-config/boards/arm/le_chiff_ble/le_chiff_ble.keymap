@@ -155,6 +155,19 @@
         };
 	
     };
+
+    behaviors {        
+		hrm_shift: homerow_mods {
+			compatible = "zmk,behavior-hold-tap";
+			label = "HOMEROW_MODS";
+			#binding-cells = <2>;
+			tapping_term_ms = <125>;
+			quick_tap_ms = <200>;
+			global-quick-tap;
+			flavor = "tap-preferred";
+			bindings = <&kp>, <&kp>;
+		};
+    };
     
     keymap {
         compatible = "zmk,keymap";
@@ -162,9 +175,9 @@
         BASE {
             label = "Base";
             bindings = <
-                &kp Q  &kp F  &kp C  &kp K  &kp X                &kp SPC  &kp W  &kp O    &kp U  &kp Z
-                &kp R  &kp S  &kp T  &kp H  &kp D                &kp V    &kp N  &kp A    &kp I  &kp L
-                &kp Y  &kp B  &kp G  &kp P  &kp COMMA            &kp SPC  &kp M  &kp DOT  &kp J  &kp SEMI
+                &kp Q  &kp F  &kp C  &kp K         &kp X                &kp SPC  &kp W         &kp O    &kp U  &kp Z
+                &kp R  &kp S  &kp T  &hrm_shift H  &kp D                &kp V    &hrm_shift N  &kp A    &kp I  &kp L
+                &kp Y  &kp B  &kp G  &kp P         &kp COMMA            &kp SPC  &kp M         &kp DOT  &kp J  &kp SEMI
                                &none  &kp SPACE                   &kp E  &none  
             >;
         };
