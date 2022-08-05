@@ -187,9 +187,9 @@
         BASE {
             label = "Base";
             bindings = <
-                &kp Q  &kp F  &kp C  &kp K         &kp X                &kp SPC  &kp W         &kp O    &kp U  &kp Z
-                &kp R  &kp S  &kp T  &hrm_shift H  &kp D                &kp V    &hrm_shift N  &kp A    &kp I  &kp L
-                &kp Y  &kp B  &kp G  &kp P         &kp COMMA            &kp SPC  &kp M         &kp DOT  &kp J  &kp SEMI
+                &kp Q  &kp F  &kp C  &kp K         &kp X                &kp SPC  &kp W                &kp O    &kp U  &kp Z
+                &kp R  &kp S  &kp T  &hrm_shift LSHIFT H  &kp D         &kp V    &hrm_shift LSHIFT N  &kp A    &kp I  &kp L
+                &kp Y  &kp B  &kp G  &kp P         &kp COMMA            &kp SPC  &kp M                &kp DOT  &kp J  &kp SEMI
                                &none  &kp SPACE                   &kp E  &none  
             >;
         };
