@@ -14,6 +14,8 @@
 #define BASE   0
 #define NUMPAD 1
 
+#define LOCKED 2
+
 / {
 
     macros {
@@ -40,6 +42,12 @@
     combos {
         compatible = "zmk,combos"; 
 
+        tog_locked {
+            timeout-ms = <50>;
+            key-positions = <30 31 32 33>;
+            bindings = <&tog LOCKED>;
+        };
+
         bootloader {
             timeout-ms = <50>;
             key-positions = <0 1 8 9>;
@@ -56,6 +64,12 @@
             timeout-ms = <50>;
             key-positions = <13 14>;
             bindings = <&sk LSHIFT>;
+        };
+	
+	combo_equals {
+            timeout-ms = <50>;
+            key-positions = <13 14>;
+            bindings = <&kp EQUAL>;
         };
 
         right_shift {
@@ -112,11 +126,6 @@
             bindings = <&kp ESC>;
         };
 	
-	combo_equals {
-            timeout-ms = <50>;
-            key-positions = <13 14>;
-            bindings = <&kp EQUAL>;
-        };
 	
  	combo_grave {
             timeout-ms = <50>;
@@ -201,6 +210,17 @@
                 &kp N0  &kp N3  &kp N2  &kp N1  &kp RET                &none &none &none &none &none     
                 &none  &kp N6  &kp N5  &kp N4  &kp COMMA               &none &none &none &none &none    
                                &none  &to BASE            &kp E  &reset  
+            >;
+        };
+
+
+        LOCKED {
+            label = "Numpad";
+            bindings = <
+                &none  &none  &none  &none  &none                &none &none &none &none &none  
+                &none  &none  &none  &none  &none                &none &none &none &none &none     
+                &none  &none  &none  &none  &none               &none &none &none &none &none    
+                               &none  &none            &none  &none  
             >;
         };
 
