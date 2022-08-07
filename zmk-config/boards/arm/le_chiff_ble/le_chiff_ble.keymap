@@ -216,9 +216,9 @@
         NAV_APP {
             label = "Nav App";
             bindings = <
-                &none  &none  &none         &none     &none                &none &none &none &none &none  
-                &none  &none  &LA(LS(ESC))  &LA(ESC)  &none                &none &none &none &none &none   
-                &none  &none  &none         &none     &none                &none &none &none &none &none    
+                &none  &none  &none            &none        &none                &none &none &none &none &none  
+                &none  &none  &kp LA(LS(ESC))  &kp LA(ESC)  &none                &none &none &none &none &none   
+                &none  &none  &none            &none        &none                &none &none &none &none &none    
                                &none  &to BASE            &none  &none  
             >;
         };
