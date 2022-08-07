@@ -13,8 +13,9 @@
 
 #define BASE   0
 #define NUMPAD 1
+#define NAV_APP 2
 
-#define LOCKED 2
+#define LOCKED 3
 
 / {
 
@@ -47,6 +48,12 @@
             key-positions = <30 31 32 33>;
             bindings = <&tog LOCKED>;
         };
+	
+        tog_app_nav {
+            timeout-ms = <50>;
+            key-positions = <20 21>;
+            bindings = <&tog NAV_APP>;
+        };	
 
         bootloader {
             timeout-ms = <50>;
@@ -64,12 +71,6 @@
             timeout-ms = <50>;
             key-positions = <13 14>;
             bindings = <&sk LSHIFT>;
-        };
-	
-	combo_equals {
-            timeout-ms = <50>;
-            key-positions = <13 14>;
-            bindings = <&kp EQUAL>;
         };
 
         right_shift {
@@ -126,13 +127,6 @@
             bindings = <&kp ESC>;
         };
 	
-	
- 	combo_grave {
-            timeout-ms = <50>;
-            key-positions = <15 16>;
-            bindings = <&kp GRAVE>;
-        };
- 
         combo_enter {
             timeout-ms = <50>;
             key-positions = <16 17>;
@@ -155,24 +149,6 @@
             timeout-ms = <50>;
             key-positions = <13 16>;
             bindings = <&caps_word>;
-        };	
-
-        combo_cut {
-            timeout-ms = <50>;
-            key-positions = <20 21>;
-            bindings = <&kp K_CUT>;
-        };
-
-        combo_copy {
-            timeout-ms = <50>;
-            key-positions = <21 22>;
-            bindings = <&kp K_COPY>;
-        };
-	
-        combo_paste {
-            timeout-ms = <50>;
-            key-positions = <22 23>;
-            bindings = <&kp K_PASTE>;
         };
 	
     };
@@ -212,14 +188,6 @@
 		    bindings = <&kp>, <&kp>;
 		};
 		
-		morph_tab: morph_tab {
-		    compatible = "zmk,behavior-mod-morph";
-		    label = "MOD_MORPH";
-		    #binding-cells = <0>;
-		    bindings = <&lt NAV_LAYER SLASH>, <&kp TAB>;
-		    mods = <(MOD_LGUI|MOD_LCTL|MOD_LALT)>;
-		};		 
-
     };
     
     keymap {
@@ -231,7 +199,7 @@
                 &kp Q           &kp F        &kp C         &kp K               &kp X             &kp SPC  &kp W                &kp O         &kp U        &kp Z
                 &hm_gui LGUI R  &gqt LALT S  &gqt LCTRL T  &hm_shift LSHIFT H  &kp D             &kp V    &hm_shift LSHIFT N   &gqt LCTRL A  &gqt LALT I  &hm_gui LGUI L 
                 &kp Y           &kp B        &kp G         &kp P               &kp COMMA         &kp SPC  &kp M                &kp DOT       &kp J        &kp SEMI
-                               &morph_tab  &kp SPACE                   &kp E  &none  
+                               &none  &kp SPACE                   &kp E  &none  
             >;
         };
 
@@ -245,9 +213,18 @@
             >;
         };
 
+        NAV_APP {
+            label = "Nav App";
+            bindings = <
+                &none  &none  &none         &none     &none                &none &none &none &none &none  
+                &none  &none  &LA(LS(ESC))  &LA(ESC)  &none                &none &none &none &none &none   
+                &none  &none  &none         &none     &none                &none &none &none &none &none    
+                               &none  &to BASE            &none  &none  
+            >;
+        };
 
         LOCKED {
-            label = "Numpad";
+            label = "LOCKED";
             bindings = <
                 &none  &none  &none  &none  &none                &none &none &none &none &none  
                 &none  &none  &none  &none  &none                &none &none &none &none &none     
