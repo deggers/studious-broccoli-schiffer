@@ -46,7 +46,7 @@
         tog_locked {
             timeout-ms = <50>;
             key-positions = <30 31 32 33>;
-	    layers = <BASE LOCKED>
+	    layers = <BASE LOCKED>;
             bindings = <&tog LOCKED>;
         };
 	
