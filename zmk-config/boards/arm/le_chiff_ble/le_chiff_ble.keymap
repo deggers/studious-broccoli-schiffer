@@ -17,7 +17,8 @@
 #define	SYM_LAYER 3
 #define	NUMPAD 4
 #define NAV_APP 5
-#define LOCKED 6
+#define BLE_LAYER 6
+#define LOCKED 7
 
 / {
 
@@ -154,6 +155,12 @@
             bindings = <&caps_word>;
         };
 	
+        combo_bleLayer {
+            timeout-ms = <125>;
+            key-positions = <30 31>;
+            bindings = <&mo BLE_LAYER>;
+        };
+	
     };
 
     behaviors {        
@@ -277,6 +284,15 @@
                                &none  &to BASE            &none  &none  
             >;
         };
+
+       BLE_LAYER {
+          bindings = <
+  		&reset        &none         &none         &bt BT_CLR     &none                 &none &none &none &none &none
+  		&bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1   &bt BT_SEL 0          &none &none &none &none &none
+  		&bootloader   &none         &none         &out OUT_USB   &none                 &none &none &none &none &none
+                                              &none &none                        &none &none
+                        >;
+                };
 
         LOCKED {
             label = "LOCKED";
