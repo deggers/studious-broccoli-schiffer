@@ -12,9 +12,10 @@
 };
 
 #define BASE 0
+#define NAV 1
 #define	NUM_UML_LAYER 2
 #define	SYM_LAYER 3
-#define BLE_LAYER 6
+#define BLE_LAYER 4
 
 / {
 
