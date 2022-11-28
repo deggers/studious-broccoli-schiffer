@@ -12,13 +12,9 @@
 };
 
 #define BASE 0
-#define	NAV_LAYER 1 
 #define	NUM_UML_LAYER 2
 #define	SYM_LAYER 3
-#define	NUMPAD 4
-#define NAV_APP 5
 #define BLE_LAYER 6
-#define LOCKED 7
 
 / {
 
@@ -45,30 +41,11 @@
     
     combos {
         compatible = "zmk,combos"; 
-
-        tog_locked {
-            timeout-ms = <50>;
-            key-positions = <30 31 32 33>;
-	    layers = <BASE LOCKED>;
-            bindings = <&tog LOCKED>;
-        };
 	
-        tog_app_nav {
-            timeout-ms = <50>;
-            key-positions = <20 21>;
-            bindings = <&tog NAV_APP>;
-        };	
-
         bootloader {
             timeout-ms = <50>;
             key-positions = <0 1 8 9>;
             bindings = <&bootloader>;
-        };
-
-        tog_numpad {
-            timeout-ms = <50>;
-            key-positions = <23 24>;
-            bindings = <&tog NUMPAD>;
         };
 
         left_shift {
@@ -214,7 +191,7 @@
             bindings = <
                 &kp Q           &kp F        &kp C         &kp K               &kp X             &kp SQT    &kp W                &kp O         &kp U        &kp Z
                 &hm_gui LGUI R  &gqt LALT S  &gqt LCTRL T  &hm_shift LSHIFT H  &kp D             &kp V      &hm_shift LSHIFT N   &gqt LCTRL A  &gqt LALT I  &hm_gui LGUI L 
-                &kp Y           &kp B        &kp G         &kp P               &kp COMMA         &kp SLASH  &kp M                &kp DOT       &kp J        &kp SEMI
+                &kp Y           &kp B        &kp G         &kp P               &kp COMMA         &kp MINUS  &kp M                &kp DOT       &kp J        &kp SEMI
                               &morph_tab  &lt NAV_LAYER SPACE        &lt NUM_UML_LAYER E  &lt SYM_LAYER LC(BSPC)  
             >;
         };
@@ -263,44 +240,14 @@
                         >;
                 };	
 
-        NUMPAD {
-            label = "Numpad";
-            bindings = <
-                &none  &kp N9  &kp N8  &kp N7  &kp BSPC                &none &none &none &none &none  
-                &kp N0  &kp N3  &kp N2  &kp N1  &kp RET                &none &none &none &none &none     
-                &none  &kp N6  &kp N5  &kp N4  &kp COMMA               &none &none &none &none &none    
-                               &none  &to BASE            &kp E  &reset  
-            >;
-        };
-
-        NAV_APP {
-            label = "Nav App";
-            bindings = <
-                &none  &none  &none            &none        &none                &none &none &none &none &none  
-                &none  &none  &kp LA(LS(ESC))  &kp LA(ESC)  &none                &none &none &none &none &none   
-                &none  &none  &none            &none        &none                &none &none &none &none &none    
-                               &none  &to BASE            &none  &none  
-            >;
-        };
-
-       BLE_LAYER {
-          bindings = <
-  		&reset        &none         &none         &bt BT_CLR     &none                 &none &none &none &none &none
-  		&bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1   &bt BT_SEL 0          &none &none &none &none &none
-  		&bootloader   &none         &none         &out OUT_USB   &none                 &none &none &none &none &none
-                                              &none &none                        &none &none
-                        >;
-                };
-
-        LOCKED {
-            label = "LOCKED";
-            bindings = <
-                &none  &none  &none  &none  &none                &none &none &none &none &none  
-                &none  &none  &none  &none  &none                &none &none &none &none &none     
-                &none  &none  &none  &none  &none               &none &none &none &none &none    
-                               &none  &none            &none  &none  
-            >;
-        };
+  BLE_LAYER {
+	  bindings = <
+		&reset        &none         &none         &bt BT_CLR     &none                 &none &none &none &none &none
+		&bt BT_SEL 4  &bt BT_SEL 3  &bt BT_SEL 2  &bt BT_SEL 1   &bt BT_SEL 0          &none &none &none &none &none
+		&bootloader   &none         &none         &out OUT_USB   &none                 &none &none &none &none &none
+					      &none &none                        &none &none
+			>;
+		};
 
     };
 };
