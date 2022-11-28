@@ -177,7 +177,7 @@
 		    compatible = "zmk,behavior-mod-morph";
 		    label = "MOD_MORPH";
 		    #binding-cells = <0>;
-		    bindings = <&lt NAV_LAYER SLASH>, <&kp TAB>;
+		    bindings = <&kp SLASH>, <&kp TAB>;
 		    mods = <(MOD_LGUI|MOD_LCTL|MOD_LALT)>;
 		};
 		
