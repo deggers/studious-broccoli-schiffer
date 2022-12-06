@@ -54,6 +54,18 @@
             key-positions = <13 14>;
             bindings = <&sk LSHIFT>;
         };
+	
+        combo_question {
+            timeout-ms = <50>;
+            key-positions = <27 28>;
+            bindings = <&kp QMARK>;
+        };
+	
+        combo_exlemnationmark {
+            timeout-ms = <50>;
+            key-positions = <28 29>;
+            bindings = <&kp EXCL>;
+        };
 
         right_shift {
             timeout-ms = <50>;
